@@ -246,7 +246,7 @@ section p {
             <h1 id="title">Chelsea High School Athlete Alumni Assosciation</h1>
         </li>
         <li>
-            <div><img src="chelsea-C.png" width="300" height="300"/></div>
+            <div><img id="chelsea-C" src="chelsea-C.png" width="300" height="300"/></div>
         </li>
       </ul>
       <section class="home" id="page-home"></section>
@@ -302,8 +302,11 @@ section p {
             
             document.getElementById("wrapper").style.zIndex = isChecked ? -1: 1;
         })
+        
         if(window.innerWidth >= 500)
             checkbox.click();
+        else
+            document.getElementById("chelsea-C").style.display = "none";
     </script>
 
 </body>
