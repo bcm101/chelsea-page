@@ -207,13 +207,13 @@ section p {
   overflow: hidden;
 }
 
-#signup:hover {
+.link:hover {
     color: purple;
     background-color: transparent;
     text-decoration: underline;
 }
 
-#signup {
+.link {
     color: blueviolet;
   background-color: transparent;
   text-decoration: none;
@@ -262,7 +262,8 @@ section p {
         <div class="content">
           <h1>Membership</h1>
           <p>Currently seeking  CHS athlete alumni to help build the foundation of the Association so as to secure legitimacy as well as consistency for the mission of the club. </p>
-          <p>Volunteering is always welcome! Sign up <a id="signup" href="https://www.w3schools.com/">here.</a></p>
+          <p>Volunteering is always welcome! Sign up <a class="link" id="signup" href="#">here.</a></p>
+          <p>You can also subscribe to the newsletter <a class="link" id="subscribe" href="#">here.</a></p>
         </div>
       </section>
       <section class="contact" id="page-contact">
@@ -272,7 +273,7 @@ section p {
         </div>
       </section>
     </main>
-
+    <script src="config.js"></script>
     <script>
         const navbar = document.getElementById("navbar");
         const list = navbar.children[0].children;
@@ -293,7 +294,7 @@ section p {
                   for(let j = 0; j < itemsToShow.length; j++)
                     itemsToShow[j].style.visibility = "hidden"
   
-                checkbox.click();
+                // checkbox.click();
             })
         }
         
@@ -303,6 +304,9 @@ section p {
             document.getElementById("wrapper").style.zIndex = isChecked ? -1: 1;
         })
         
+        document.getElementById("signup").href = urls.volunteer;
+        document.getElementById("subscribe").href = urls.subscribe;
+
         if(window.innerWidth >= 500)
             checkbox.click();
         else
