@@ -231,9 +231,9 @@ section p {
         <li><a href="#page-contact" v="4">Contact Us</a></li>
       </ul>
       <ul class="soc-media">
-        <li><a href="#" class="fa fa-twitter"></a></li>
-        <li><a href="#" class="fa fa-facebook"></a></li>
-        <li><a href="#" class="fa fa-google-plus"></a></li>
+        <li><a href="#" class="fa fa-twitter" id="twitter"></a></li>
+        <li><a href="#" class="fa fa-facebook" id="facebook"></a></li>
+        <li><a href="#" class="fa fa-instagram" id="instagram"></a></li>
       </ul>
     </nav>
     <main id="wrapper">
@@ -262,7 +262,7 @@ section p {
         <div class="content">
           <h1>Membership</h1>
           <p>Currently seeking  CHS athlete alumni to help build the foundation of the Association so as to secure legitimacy as well as consistency for the mission of the club. </p>
-          <p>Volunteering is always welcome! Sign up <a class="link" id="signup" href="#">here.</a></p>
+          <p>Volunteering is always welcome! Sign up <a class="link" id="volunteer" href="#">here.</a></p>
           <p>You can also subscribe to the newsletter <a class="link" id="subscribe" href="#">here.</a></p>
         </div>
       </section>
@@ -304,8 +304,9 @@ section p {
             document.getElementById("wrapper").style.zIndex = isChecked ? -1: 1;
         })
         
-        document.getElementById("signup").href = urls.volunteer;
-        document.getElementById("subscribe").href = urls.subscribe;
+        Object.keys(urls).forEach( (url) => {
+          document.getElementById(url).href = urls[url];
+        })
 
         if(window.innerWidth >= 500)
             checkbox.click();
